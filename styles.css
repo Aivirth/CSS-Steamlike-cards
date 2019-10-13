@@ -1,0 +1,215 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1a2837;
+}
+
+.Container {
+  max-width: 72rem;
+  margin: auto;
+}
+
+.Row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Card {
+  padding: 2rem;
+  height: 40rem;
+  width: 25rem;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.Card__background {
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Card__background::before {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 10;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.Card__image {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.Card__overlay {
+  position: relative;
+  z-index: 10;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+.Card__content {
+  -webkit-transform: translateY(400%);
+          transform: translateY(400%);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  color: #fff;
+}
+
+.Card:hover .Card__background::before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.Card:hover .Card__overlay {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.Card:hover .Card__content {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.Card2 {
+  padding: 0rem;
+  height: 40rem;
+  width: 25rem;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.Card2__thumbnail {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.Card2__item {
+  height: 20rem;
+  padding: 1.5rem;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.Card2__item--top {
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  padding: 0;
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+  opacity: 0;
+  position: relative;
+}
+
+.Card2__item--bottom {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  background: #18395f;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+}
+
+.Card2__background {
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Card2__background::before {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.Card2__image {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.Card2__overlay {
+  position: relative;
+  z-index: 10;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 100%;
+}
+
+.Card2__content {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  color: #fff;
+}
+
+.Card2:hover .Card2__item--top, .Card2:hover .Card2__item--bottom {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+/*# sourceMappingURL=styles.css.map */

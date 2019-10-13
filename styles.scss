@@ -1,0 +1,206 @@
+// Resets
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Variables
+$background-color: rgb(26, 40, 55);
+$boxShadow-color--1: rgba(0, 0, 0, 0.75);
+$card-textColor: #fff;
+$card-height: 40rem;
+$card-width: 25rem;
+$card-item-height: $card-height / 2;
+$card-boxShadow: 0px 3px 5px 0px $boxShadow-color--1;
+$card-backgroundImage-blur: 0.8rem;
+
+body {
+  background: $background-color;
+}
+
+//Layout
+.Container {
+  max-width: 72rem;
+  margin: auto;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Card {
+  padding: 2rem;
+  height: $card-height;
+  width: $card-width;
+  box-shadow: $card-boxShadow;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+
+  $rootSelector: &;
+
+  &__background {
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    filter: blur(2px);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(1.1);
+
+    &::before {
+      top: 0;
+      left: 0;
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 10;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__overlay {
+    position: relative;
+    z-index: 10;
+    transform: translateY(25%);
+    transition: all 0.5s ease;
+    height: 100%;
+  }
+
+  &__content {
+    transform: translateY(400%);
+    transition: all 0.5s ease-out;
+    color: $card-textColor;
+  }
+
+  &:hover {
+    #{$rootSelector}__background {
+      &::before {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    #{$rootSelector}__overlay {
+      transform: translateY(0%);
+    }
+
+    #{$rootSelector}__content {
+      transform: translateY(0%);
+    }
+  }
+}
+
+.Card2 {
+  padding: 0rem;
+  height: $card-height;
+  width: $card-width;
+  box-shadow: $card-boxShadow;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+
+  $rootSelector: &;
+
+  &__thumbnail {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  &__item {
+    height: $card-item-height;
+    padding: 1.5rem;
+    transition: all 0.5s ease-out;
+
+    &--top {
+      transition: all 0.7s ease-out;
+      padding: 0;
+      transform: translateY(200%);
+      opacity: 0;
+      position: relative;
+    }
+
+    &--bottom {
+      transition: all 0.5s ease-out;
+      background: rgb(24, 57, 95);
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  &__background {
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(1.1);
+
+    &::before {
+      top: 0;
+      left: 0;
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 10;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__overlay {
+    position: relative;
+    z-index: 10;
+    transition: all 0.5s ease;
+    height: 100%;
+  }
+
+  &__content {
+    transition: all 0.5s ease-out;
+    color: $card-textColor;
+  }
+
+  &:hover {
+    #{$rootSelector}__item {
+      &--top,
+      &--bottom {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+  }
+}
